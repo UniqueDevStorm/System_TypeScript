@@ -17,7 +17,7 @@ process.on('uncaughtException', console.error)
 
 // client.loadExtension(require.resolve('./extensions/Music'), true)
 
-// client.login('Nzc0NjMyMDk4OTY2NjY3MzA0.X6amXA.IYlk2_Xjhysk3evpryDJEukv77s' /* 여기 토큰 */)
+// client.login('Your Token' /* 여기 토큰 */)
 
 import SystemClient from "./client";
 
