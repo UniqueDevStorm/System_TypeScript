@@ -57,14 +57,12 @@ export default class Say extends Command {
     async exec(msg, {args} : {args: string}) {
         if (!msg.member?.voice?.channel) return msg.reply('먼저 음성채널에 들어가주세요!')
         let player = Say.playerMap.get(msg.guild)
-        // if (args.length >= 200) {
-        //     return await msg.reply('200자 미만으로 해주세요.')
-        // }
         if (!player) {
             player = new TTSPlayer(msg.guild)
             Say.playerMap.set(msg.guild, player)
         }
         await msg.member.voice.channel.join()
         player.say(args)
+        msg.react('✅')
     }
 }
